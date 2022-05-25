@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 import Carousel from '../Carousel/Carousel';
 import Products from '../Products/Products';
 import Reviews from '../Reviews/Reviews';
@@ -11,6 +12,7 @@ const Home = () => {
             <Products></Products>
             <Reviews></Reviews>
             <Summary></Summary>
+            <Footer></Footer>
 
         </div>
     );

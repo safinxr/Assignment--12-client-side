@@ -3,7 +3,7 @@ import React from 'react';
 const Products = () => {
     return (
         <div className="container py-5">
-            <h1 className="fw-bolder text-center text-color shadow-lg p-2 rounded ">OUR TOOLS</h1>
+            <h1 className="fw-bolder text-center text-color shadow-lg p-2 rounded ">Our Tools</h1>
             <div>
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     <div className="col">
