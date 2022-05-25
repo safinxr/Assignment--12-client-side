@@ -5,7 +5,7 @@ const Summary = () => {
         <div className='container my-5'>
             <h1 className='text-center my-4 fw-bold sub-color'>MILLIONS BUSINESS TRUST US</h1>
             <div className='row shadow rounded-4'>
-                <div className='col-3 border-end p-4'>
+                <div className='col-6 col-md-3 border-end p-4'>
                     <h5 className='mb-1'>Total countries</h5>
                     <div className='d-flex justify-content-between align-items-center'>
                         <h1 className='fw-bolder mb-0 main-color'>52</h1>
@@ -14,7 +14,7 @@ const Summary = () => {
                     <small>21% more than last Year</small>
 
                 </div>
-                <div className='col-3 border-end p-4'>
+                <div className='col-6 col-md-3 border-end p-4'>
                     <h5 className='mb-1'>Complete Projects</h5>
                     <div className='d-flex justify-content-between align-items-center'>
                         <h1 className='fw-bolder mb-0 sub-color2'>8512+</h1>
@@ -23,7 +23,7 @@ const Summary = () => {
                     <small>30% more than last Year</small>
 
                 </div>
-                <div className='col-3 border-end p-4'>
+                <div className='col-6 col-md-3 border-end p-4'>
                     <h5 className='mb-1'>Happy Clients</h5>
                     <div className='d-flex justify-content-between align-items-center'>
                         <h1 className='fw-bolder mb-0 main-color'>5752+</h1>
@@ -32,7 +32,7 @@ const Summary = () => {
                     <small>50% more than last Year</small>
 
                 </div>
-                <div className='col-3 p-4'>
+                <div className='col-6 col-md-3 p-4'>
                     <h5 className='mb-1'>Feedbacks</h5>
                     <div className='d-flex justify-content-between align-items-center'>
                         <h1 className='fw-bolder mb-0 sub-color2'>4000+</h1>
