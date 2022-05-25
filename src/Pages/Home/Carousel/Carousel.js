@@ -2,7 +2,7 @@ import React from 'react';
 
 const Carousel = () => {
     return (
-        <div>
+        <div style={{marginTop:'-71px'}}>
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -11,13 +11,13 @@ const Carousel = () => {
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://i.ibb.co/yp80kJQ/Untitled-design-min.png" class="d-block w-100" alt="..."/>
+                        <img src="https://i.ibb.co/yp80kJQ/Untitled-design-min.png" class="d-block w-100" alt="..." />
                     </div>
                     <div class="carousel-item">
-                        <img src="https://i.ibb.co/gT2tK2X/Untitled-design-2-min.png" class="d-block w-100" alt="..."/>
+                        <img src="https://i.ibb.co/gT2tK2X/Untitled-design-2-min.png" class="d-block w-100" alt="..." />
                     </div>
                     <div class="carousel-item">
-                        <img src="https://i.ibb.co/TtV3HJr/Untitled-design-1-min.png" class="d-block w-100" alt="..."/>
+                        <img src="https://i.ibb.co/TtV3HJr/Untitled-design-1-min.png" class="d-block w-100" alt="..." />
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
