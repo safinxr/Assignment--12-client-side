@@ -1,0 +1,13 @@
+iframe {
+    border-top-left-radius: 3%;
+    border-bottom-left-radius: 3%;
+
+}
+
+.shipping-img {
+    background-image: url('https://i.ibb.co/j4NBnxq/Untitled-design-min-1.png');
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    background-position: center center;
+}

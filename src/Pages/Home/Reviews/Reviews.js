@@ -2,8 +2,8 @@ import React from 'react';
 
 const Reviews = () => {
     return (
-        <div className='bg-sub'>
-            <div className='container py-5'>
+        <div className='bg-sub py-5 my-5'>
+            <div className='container py-5'>               
                 <div className="row row-cols-1 row-cols-md-4 g-4">
                     <div className="col">
                         <div className="card h-100">

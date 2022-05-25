@@ -15,7 +15,7 @@ const Navbar = () => {
     }
     window.addEventListener('scroll', changNavColor)
     return (
-        <nav className={ navColor ? 'navbar navbar-expand-lg navbar-light sticky-top bg-white': 'navbar navbar-expand-lg navbar-light sticky-top' }>
+        <nav className='navbar navbar-expand-lg sticky-top bg-color'>
             <div className="container">
                 <Link className='navbar-brand ' to='/'>
                     <img className='w-75' src="https://i.ibb.co/z7WkSHJ/Untitled-150-70px-160-70px-160-60px-180-60px-200-60px.png" alt="" />
@@ -29,7 +29,7 @@ const Navbar = () => {
                         <li className='nave-item'>
                             <NavLink
                                 className={({ isActive }) =>
-                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2"
+                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2 text-white"
                                 }
                                 to="/"
                             >
@@ -39,7 +39,7 @@ const Navbar = () => {
                         <li className='nave-item'>
                             <NavLink
                                 className={({ isActive }) =>
-                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2"
+                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2 text-white"
                                 }
                                 to="/about"
                             >
@@ -49,7 +49,7 @@ const Navbar = () => {
                         <li className='nave-item'>
                             <NavLink
                                 className={({ isActive }) =>
-                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2"
+                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2 text-white"
                                 }
                                 to="/login"
                             >
