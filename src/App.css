@@ -1,0 +1,22 @@
+.main-color{
+    color: #570DF8;
+}
+.main-color2{
+    color: #7842E5;
+}
+.sub-color{
+    color:#00033E;
+}
+.sub-color2{
+    color: #F000B8;
+}
+
+.text-color{
+    background: -webkit-linear-gradient(60deg, #570DF8, #7842E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-color{
+    background-image: linear-gradient(60deg, #570DF8, #7842E5);
+}
+

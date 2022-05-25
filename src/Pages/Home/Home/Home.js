@@ -1,13 +1,15 @@
 import React from 'react';
 import Carousel from '../Carousel/Carousel';
-import Items from '../Items/Items';
+import Products from '../Products/Products';
+import Summary from '../Summary/Summary';
 
 const Home = () => {
     return (
         <div>
             <Carousel></Carousel>
-            <Items></Items>
-            
+            <Products></Products>
+            <Summary></Summary>
+
         </div>
     );
 };
