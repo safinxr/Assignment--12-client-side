@@ -18,7 +18,7 @@ const Summary = () => {
                     <h5 className='mb-1'>Annual revenue</h5>
                     <div className='d-flex justify-content-between align-items-center'>
                         <h1 className='fw-bolder mb-0 sub-color2'>850K+</h1>
-                        <h2 className='sub-color2'><i class="fa-solid fa-money-bill-trend-up"></i></h2>
+                        <h2 className='sub-color2'><i className="fa-solid fa-money-bill-trend-up"></i></h2>
                     </div>
                     <small>30% more than last Year</small>
 
@@ -27,7 +27,7 @@ const Summary = () => {
                     <h5 className='mb-1'>Happy Clients</h5>
                     <div className='d-flex justify-content-between align-items-center'>
                         <h1 className='fw-bolder mb-0 main-color'>45k+</h1>
-                        <h2 className='main-color'><i class="fa-solid fa-users"></i></h2>
+                        <h2 className='main-color'><i className="fa-solid fa-users"></i></h2>
                     </div>
                     <small>50% more than last Year</small>
 
