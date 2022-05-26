@@ -24,7 +24,7 @@
     background-color: #007DFE;
 }
 .custom-color3{
-    background-color: #fed330;
+    background-color: #3ABFF8;
 }
 
 .cart-img-div{
@@ -38,3 +38,18 @@
 .order-div{
     height: 500px;
 }
+
+.sm-div{
+    height: 250px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 576px) {
+    .img-rounded-start {
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+        border-bottom-left-radius: 0px;
+    }
+  }
+  
