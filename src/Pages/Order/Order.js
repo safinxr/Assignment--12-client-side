@@ -9,16 +9,14 @@ const Order = () => {
 
     const { productId } = useParams();
     console.log(productId)
-
-
-    const { data, isLoading } = useQuery('products', () => fetch(`http://localhost:5000/product/${productId}`).then(res => res.json()))
+    const { data, isLoading, } = useQuery('product', () => fetch(`http://localhost:5000/product/${productId}`).then(res => res.json()))
 
     console.log(isLoading)
 
 
 
     if (isLoading) {
-        <Loading></Loading>
+        return <Loading></Loading>
     }
 
 
@@ -28,50 +26,29 @@ const Order = () => {
 
     return (
         <div className="container">
-            <div className="text-center">
-                <h2 className="rounded fw-bold py-2 px-4 shadow-lg text-info mt-4 d-inline-block">
-                    Stock Update
-                </h2>
-            </div>
-
-            <div className="mb-5">
-                <div className="row g-5 shadow-lg rounded pb-5 pb-md-2 my-4">
-                    <div className="col-12 col-md-6">
-                        <div className="">
-                            <img src={img} alt="" />
-                        </div>
+            <div className='container'>
+                <div className='col-12 col-md-10 mx-auto row my-5 shadow-lg rounded-4 custom-color3 order-div'>
+                    <div className='col-12 col-md-6 p-0 bg-white d-flex justify-content-center align-items-center img-rounded-start d-none d-md-block'>
+                        <img className=' d-none d-md-block ' src={img} alt="" />
                     </div>
-                    <div className="col-12 col-md-6">
-                        <div className="">
+                    <div className='col-12 col-md-6 p-4'>
+                        <div className="sub-color mb-4">
                             <h1>{name}</h1>
-                            <p className="text-justify">
-                                <small>{description}</small>
-                            </p>
-                            <h3 className="mb-1">Available quantity: {available}</h3>
-                            <h3 className="mb-1">Minimum quantity: {minimum}</h3>
-                            <h3 className="mb-1">Price: ${price}</h3>
-                            <div className="d-flex mt-5 pt-2 mb-3">
-                                <button
-
-                                    className="btn btn-info px-4  me-2 "
-                                >
-                                    Deliver <i className="fa-solid fa-truck"></i>
-                                </button>
-                                <form className="d-flex ">
-                                    <input type="number" className="form-control" name="number" required />
-                                    <button className="ms-2 px-3 btn btn-info" type="submit">
-                                        Add
-                                    </button>
-                                </form>
-                            </div>
-                            <div className="d-flex">
-                                <Link className="btn btn-info px-5" to="/manageitems">
-                                    Manage items <i className="fa-solid fa-list-check"></i>
-                                </Link>
-                                <Link className="btn btn-info px-5 ms-2" to="/additems">
-                                    Add items <i className="fa-solid fa-circle-plus"></i>
-                                </Link>
-                            </div>
+                            <p>{description}</p>
+                            <h3>Available quantity: {available}</h3>
+                            <h3>Minimum quantity: {minimum}</h3>
+                            <h3>Price: ${price}</h3>
+                        </div>
+                        <div>
+                            <form>
+                                <div class="mb-3 d-flex">
+                                    <input
+                                        type="email"
+                                        class="form-control rounded-4 p-2"
+                                        aria-describedby="emailHelp" />
+                                    <button type="submit" class="btn btn-primary ms-2">Submit</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

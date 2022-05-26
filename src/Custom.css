@@ -23,6 +23,9 @@
 .custom-color2{
     background-color: #007DFE;
 }
+.custom-color3{
+    background-color: #fed330;
+}
 
 .cart-img-div{
     height: 200px;
@@ -30,4 +33,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.order-div{
+    height: 500px;
 }
