@@ -1,7 +1,12 @@
-iframe {
-    border-top-left-radius: 3%;
-    border-bottom-left-radius: 3%;
-
+.img-rounded-start {
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+.c-rounded-bottom {
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+    border-top-left-radius:0px;
+    border-top-right-radius: 0px;
 }
 
 .shipping-img {
@@ -10,4 +15,19 @@ iframe {
     width: 100%;
     height: 70vh;
     background-position: center center;
+}
+
+.custom-color{
+    background-color: #D268CC;
+}
+.custom-color2{
+    background-color: #007DFE;
+}
+
+.cart-img-div{
+    height: 200px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

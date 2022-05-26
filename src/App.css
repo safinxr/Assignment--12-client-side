@@ -35,3 +35,13 @@
     background-image: linear-gradient(60deg, #570DF8, #F000B8);
 }
 /* 🤡🤡🤡🤡🤡🤡🤡🤡 Custom Colors end 🤡🤡🤡🤡🤡🤡🤡🤡 */
+
+/* ⌨️⌨️⌨️⌨️⌨️⌨️⌨️⌨️⌨️ Fonts start⌨️⌨️⌨️⌨️⌨️⌨️⌨️⌨️ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap');
+.placeholder-icon{
+    font-family:Arial, FontAwesome;
+}
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+/* ⌨️⌨️⌨️⌨️⌨️⌨️⌨️⌨️⌨️ Fonts start⌨️⌨️⌨️⌨️⌨️⌨️⌨️⌨️ */

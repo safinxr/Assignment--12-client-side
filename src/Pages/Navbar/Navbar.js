@@ -1,19 +1,12 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, NavLink } from 'react-router-dom';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
-    const [navColor, setNavColor] = useState(false)
-    
-    
-    const changNavColor =()=>{
-        if(window.scrollY >= 100){
-            setNavColor(true)
-        }
-        else{
-            setNavColor(false)
-        }
-    }
-    window.addEventListener('scroll', changNavColor)
+    const [user, loading, error] = useAuthState(auth);
+
     return (
         <nav className='navbar navbar-expand-lg sticky-top bg-color'>
             <div className="container">
@@ -47,14 +40,21 @@ const Navbar = () => {
                             </NavLink>
                         </li>
                         <li className='nave-item'>
-                            <NavLink
-                                className={({ isActive }) =>
-                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2 text-white"
-                                }
-                                to="/login"
+                            {
+                                user ? <NavLink
+                                onClick={()=>signOut(auth)}
+                                className="btn btn-primary fs-4 ms-2 text-white rounded-5 px-3 bg-sub2 border-0 fw-bold"
+                                to="/signin    "
                             >
-                                Login
-                            </NavLink>
+                                Signout
+                            </NavLink>:
+                            <NavLink
+                            className="btn btn-primary fs-4 ms-2 text-white rounded-5 px-3 bg-sub2 border-0 fw-bold"
+                            to="/signin    "
+                        >
+                            Signin
+                        </NavLink>
+                            }
                         </li>                       
                     </ul>
 
