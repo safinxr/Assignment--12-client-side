@@ -7,6 +7,8 @@ import auth from '../../firebase.init';
 const Navbar = () => {
     const [user, loading, error] = useAuthState(auth);
 
+    console.log(user)
+
     return (
         <nav className='navbar navbar-expand-lg sticky-top bg-color'>
             <div className="container">
@@ -36,7 +38,7 @@ const Navbar = () => {
                                 }
                                 to="/about"
                             >
-                                About
+                                Dashboard
                             </NavLink>
                         </li>
                         <li className='nave-item'>
@@ -49,7 +51,7 @@ const Navbar = () => {
                                 className="btn btn-primary fs-4 ms-2 text-white rounded-5 px-3 bg-sub2 border-0 fw-bold"
                                 to="/signin    "
                             >
-                                Signout
+                             {user?.displayName.split(" ")[0]} / Signout
                             </NavLink>:
                             <NavLink
                             className="btn btn-primary fs-4 ms-2 text-white rounded-5 px-3 bg-sub2 border-0 fw-bold"
