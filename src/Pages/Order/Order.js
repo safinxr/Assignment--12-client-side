@@ -51,12 +51,14 @@ const Order = () => {
     const orderHandel = (e) => {
         e.preventDefault()
         const quantity = e.target.quantity.value;
+        const number = e.target.phone.value;
+        const address =e.target.address.value;
         if (quantity >= minimum && quantity <= available) {
             const totalPrice = quantity * price;
             Swal.fire({
-                imageUrl:`${img}`,
+                imageUrl: `${img}`,
                 imageHeight: 200,
-                imageWidth:300,
+                imageWidth: 300,
                 title: `${name}`,
                 html: `<p>Quantity: $${quantity}</p>
                 <p>Total Price: $${totalPrice}</p>`,
@@ -75,7 +77,7 @@ const Order = () => {
                     const newData = { newquantity };
                     const email = user.email;
                     const productName = name;
-                    const postData = { productName, email, quantity, totalPrice }
+                    const postData = { productName, email, quantity, totalPrice, number, address }
 
 
                     fetch('http://localhost:5000/orders', {
@@ -125,28 +127,40 @@ const Order = () => {
                     </div>
                     <div className='col-12 col-md-6 p-4'>
                         <div className="sub-color mb-4 text-white">
-                            <h2 className="d-none d-md-block">{name}</h2>
-                            <p className="pb-4">{description}</p>
-                            <h4>Available quantity: {available}</h4>
-                            <h4>Minimum quantity: {minimum}</h4>
-                            <h4>Price: ${price}</h4>
-                            <h4>Total Price: ${totalPrice ? totalPrice : price * minimum}</h4>
+                            <h3 className="d-none d-md-block">{name}</h3>
+                            <p className="mb-0">Available quantity: {available}</p>
+                            <p className="mb-0">Minimum quantity: {minimum}</p>
+                            <p className="mb-0">Price: ${price}</p>
+                            <p className="mb-0">Total Price: ${totalPrice ? totalPrice : price * minimum}</p>
                         </div>
                         <div>
                             <form onSubmit={orderHandel}>
-                                <div className="mb-3 d-flex">
+                                <div className="mb-3">
                                     <input
+                                        required
                                         name="quantity"
                                         defaultValue={minimum}
                                         onChange={orderValue}
                                         placeholder={'minimum' + minimum}
                                         type="number"
-                                        className="form-control rounded-5 p-2 border-0 px-3"
-                                        aria-describedby="emailHelp" />
+                                        className="form-control mb-3 rounded-5 p-2 border-0 px-3" />
+                                    <p className="ms-2 sub-color2 mb-1">{orderError}</p>
+                                    <input
+                                        required
+                                        name="phone"
+                                        placeholder='&#xf095; Your phone number'
+                                        type="number"
+                                        className="form-control mb-3 rounded-5 p-2 border-0 px-3 placeholder-icon" />
+                                    <input
+                                        required
+                                        name="address"
+                                        placeholder='&#xf041; Your Address'
+                                        type="text"
+                                        className="form-control mb-3 rounded-5 p-2 border-0 px-3 placeholder-icon" />
 
-                                    <button type="submit" className="btn btn-primary ms-1 rounded-5 px-4">Order</button>
+                                    <button type="submit" className="btn btn-primary rounded-5 px-4 w-100 ">Purchase</button>
                                 </div>
-                                <p className="ms-2 sub-color2">{orderError}</p>
+
                             </form>
                         </div>
                     </div>
