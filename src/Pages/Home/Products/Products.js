@@ -9,15 +9,11 @@ const Products = () => {
 
     const recount= async ()=>{
         const newCount = count + 3;
-        await setCount(newCount);
-        
-        await refetch();
-
-
-        
+        await setCount(newCount);        
+        await refetch();  
     }
     return (
-        <div className="container py-5">
+        <div className="container pt-5">
             <div className='d-flex justify-content-center mb-4 mt-5'>
                 <h1 className="fw-bolder sub-color shadow py-3 px-4 rounded-4 d-inline-block ">OUR PRODUCTS</h1>
             </div>
@@ -35,7 +31,7 @@ const Products = () => {
                 </div>
             </div>
             <div className='d-flex justify-content-center mb-4 mt-5'>
-                <button onClick={recount} className='btn  shadow-lg rounded-5 px-5 py-2 sub-color fw-bold border-0 mx-auto'><h2>See more <i class="fa-solid fa-angles-down"></i></h2></button>
+                <button onClick={recount} className={count > data?.length ? 'd-none' : 'btn  shadow-lg rounded-5 px-5 py-2 sub-color fw-bold border-0 mx-auto'}><h2>See more <i className="fa-solid fa-angles-down"></i></h2></button>
             </div>
 
         </div>
