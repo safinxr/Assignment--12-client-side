@@ -2,6 +2,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../Hooks/UseToken';
 import Loading from '../Loading/Loading';
 
 const Signin = () => {
@@ -23,8 +24,10 @@ const Signin = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         signInWithEmailAndPassword(email, password);
- 
     }
+
+    const [token] = useToken(user || gUser)
+
     // 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 HTML 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟
     return (
         <div className='container'>

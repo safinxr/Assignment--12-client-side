@@ -7,6 +7,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import useToken from '../../Hooks/UseToken';
 
 const Signup = () => {
     //🤖🤖🤖🤖🤖🤖🤖 Firebase Hooks start🤖🤖🤖🤖🤖🤖🤖🤖 
@@ -20,9 +21,7 @@ const Signup = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-    //🤖🤖🤖🤖🤖🤖🤖 Firebase Hooks end🤖🤖🤖🤖🤖🤖🤖🤖 
-
-    // 🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓 Signup Handel🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓
+    // 🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓 Signup Handel start🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓
     const handleSubmit = async (e) => {
         e.preventDefault()
         const name = e.target.name.value;
@@ -31,6 +30,10 @@ const Signup = () => {
         await createUserWithEmailAndPassword(email, password);
         await updateProfile({ displayName: name });
     }
+
+    const [token] =useToken(user || gUser)
+     
+
     // 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 HTML 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 
     return (
         <div className='container'>

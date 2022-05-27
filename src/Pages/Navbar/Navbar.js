@@ -42,7 +42,10 @@ const Navbar = () => {
                         <li className='nave-item'>
                             {
                                 user ? <NavLink
-                                onClick={()=>signOut(auth)}
+                                onClick={()=>{
+                                    signOut(auth)
+                                    localStorage.removeItem('token')
+                                }}
                                 className="btn btn-primary fs-4 ms-2 text-white rounded-5 px-3 bg-sub2 border-0 fw-bold"
                                 to="/signin    "
                             >
