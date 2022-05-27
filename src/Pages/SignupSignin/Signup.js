@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
     useCreateUserWithEmailAndPassword,
     useSignInWithGoogle,
@@ -10,6 +10,11 @@ import Loading from '../Loading/Loading';
 import useToken from '../../Hooks/UseToken';
 
 const Signup = () => {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
+
     //🤖🤖🤖🤖🤖🤖🤖 Firebase Hooks start🤖🤖🤖🤖🤖🤖🤖🤖 
 
     const [
@@ -21,6 +26,12 @@ const Signup = () => {
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
+    const [token] = useToken(user || gUser)
+
+    if (token) {
+        navigate(from, { replace: true });
+    }
+
     // 🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓 Signup Handel start🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -31,8 +42,7 @@ const Signup = () => {
         await updateProfile({ displayName: name });
     }
 
-    const [token] =useToken(user || gUser)
-     
+
 
     // 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 HTML 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 
     return (

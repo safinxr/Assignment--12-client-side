@@ -4,8 +4,18 @@ import Loading from '../../Loading/Loading';
 import Product from './Product';
 
 const Products = () => {
-    const {data, isLoading } = useQuery('products', ()=> fetch(`http://localhost:5000/product?count=6`).then(res =>res.json()))
+    const [count , setCount] = useState(3)
+    const { data, isLoading, refetch } = useQuery('products', () => fetch(`http://localhost:5000/product?count=${count}`).then(res => res.json()))
 
+    const recount= async ()=>{
+        const newCount = count + 3;
+        await setCount(newCount);
+        
+        await refetch();
+
+
+        
+    }
     return (
         <div className="container py-5">
             <div className='d-flex justify-content-center mb-4 mt-5'>
@@ -13,17 +23,21 @@ const Products = () => {
             </div>
             <div>
                 {
-                    isLoading ? <Loading></Loading>: ''
+                    isLoading ? <Loading></Loading> : ''
                 }
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
-                        data?.map(product => <Product 
-                        key={product._id}
-                        data={product}
+                        data?.map(product => <Product
+                            key={product._id}
+                            data={product}
                         ></Product>)
-                    }                 
+                    }
                 </div>
             </div>
+            <div className='d-flex justify-content-center mb-4 mt-5'>
+                <button onClick={recount} className='btn  shadow-lg rounded-5 px-5 py-2 sub-color fw-bold border-0 mx-auto'><h2>See more <i class="fa-solid fa-angles-down"></i></h2></button>
+            </div>
+
         </div>
     );
 };

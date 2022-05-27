@@ -1,11 +1,16 @@
 import React from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/UseToken';
 import Loading from '../Loading/Loading';
 
 const Signin = () => {
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
+
     //🤖🤖🤖🤖🤖🤖🤖 Firebase Hooks start🤖🤖🤖🤖🤖🤖🤖🤖 
 
     const [
@@ -16,7 +21,12 @@ const Signin = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-    //🤖🤖🤖🤖🤖🤖🤖 Firebase Hooks end🤖🤖🤖🤖🤖🤖🤖🤖 
+    const [token] = useToken(user || gUser) 
+
+    if(token){
+        navigate(from, { replace: true });
+    }
+
 
     // 🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓 Signup Handel🔓🔓🔓🔓🔓🔓🔓🔓🔓🔓
     const handleSubmit = async (e) => {
@@ -26,7 +36,6 @@ const Signin = () => {
         signInWithEmailAndPassword(email, password);
     }
 
-    const [token] = useToken(user || gUser)
 
     // 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 HTML 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟
     return (

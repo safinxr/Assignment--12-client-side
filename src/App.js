@@ -6,6 +6,7 @@ import './Custom.css'
 import Signup from './Pages/SignupSignin/Signup';
 import Signin from './Pages/SignupSignin/Signin';
 import Order from './Pages/Order/Order';
+import RequireAuth from './Component/RequireAuth'
 
 
 function App() {
@@ -15,9 +16,11 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
-        <Route path='/order/:productId' element={<Order></Order>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/signin' element={<Signin></Signin>}></Route>
+        <Route path='/order/:productId' element={<RequireAuth>
+          <Order></Order>
+        </RequireAuth>}></Route>
       </Routes>
     </div>
   );
