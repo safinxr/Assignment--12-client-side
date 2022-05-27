@@ -5,6 +5,7 @@ import '../../Custom.css'
 import { useState } from "react";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from "../../firebase.init";
+import Swal from 'sweetalert2'
 
 
 
@@ -18,19 +19,20 @@ const Order = () => {
 
     //🧲🧲🧲🧲🧲🧲🧲🧲 product fetch start 🧲🧲🧲🧲🧲🧲🧲🧲
     const { productId } = useParams();
-    
-    const { data, isLoading, refetch } = useQuery('product', () => fetch(`http://localhost:5000/product/${productId}`).then(res => res.json()))
 
+    const { data, isLoading, refetch } = useQuery('product', () => fetch(`http://localhost:5000/product/${productId}`).then(res => res.json()))
 
     //🧩🧩🧩🧩🧩🧩🧩🧩🧩 ui data pass 🧩🧩🧩🧩🧩🧩🧩🧩🧩 
     if (isLoading) {
         return <Loading></Loading>
     }
     const { img, name, description, available, minimum, price, _id } = data
+
     const orderValue = (e) => {
         const value = e.target.value;
+        console.log(value, minimum)
         setTotalPrice(value * price)
-        if (value <= minimum) {
+        if (value < minimum) {
             return setOrderError('You have to at least order ' + minimum)
 
         }
@@ -41,28 +43,69 @@ const Order = () => {
             setOrderError('')
         }
     }
-    if (totalPrice < 1) {
-        setTotalPrice(price * minimum)
-    }
+
+
 
     //🍔🍔🍔🍔🍔🍔🍔🍔🍔 Order handel 🍔🍔🍔🍔🍔🍔🍔🍔🍔
 
     const orderHandel = (e) => {
         e.preventDefault()
         const quantity = e.target.quantity.value;
-        const newquantity = available - quantity;
-        const newData = { newquantity };
-        fetch(`http://localhost:5000/product/${productId}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json",
-            },
-            body: JSON.stringify(newData),
-        })
-            .then(res => res.json())
-            .then(data => {
-                refetch()
+        if (quantity >= minimum && quantity <= available) {
+            const totalPrice = quantity * price;
+            Swal.fire({
+                imageUrl:`${img}`,
+                imageHeight: 200,
+                imageWidth:300,
+                title: `${name}`,
+                html: `<p>Quantity: $${quantity}</p>
+                <p>Total Price: $${totalPrice}</p>`,
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Continue'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Order Success',
+                        'See more details on dashboard',
+                        'success'
+                    )
+                    const newquantity = available - quantity;
+                    const newData = { newquantity };
+                    const email = user.email;
+                    const productName = name;
+                    const postData = { productName, email, quantity, totalPrice }
+
+
+                    fetch('http://localhost:5000/orders', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(postData)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data, "order post");
+                        })
+
+                    fetch(`http://localhost:5000/product/${productId}`, {
+                        method: "PUT",
+                        headers: {
+                            "content-type": "application/json",
+                        },
+                        body: JSON.stringify(newData),
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data, 'product chang')
+                            refetch()
+                        })
+
+                }
             })
+        }
     }
 
     // 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟 HTML 🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟🍟
@@ -83,11 +126,11 @@ const Order = () => {
                     <div className='col-12 col-md-6 p-4'>
                         <div className="sub-color mb-4 text-white">
                             <h2 className="d-none d-md-block">{name}</h2>
-                            <p>{description}</p>
-                            <h3>Available quantity: {available}</h3>
-                            <h3>Minimum quantity: {minimum}</h3>
-                            <h3>Price: ${price}</h3>
-                            <h3>Total Price: ${totalPrice}</h3>
+                            <p className="pb-4">{description}</p>
+                            <h4>Available quantity: {available}</h4>
+                            <h4>Minimum quantity: {minimum}</h4>
+                            <h4>Price: ${price}</h4>
+                            <h4>Total Price: ${totalPrice ? totalPrice : price * minimum}</h4>
                         </div>
                         <div>
                             <form onSubmit={orderHandel}>
