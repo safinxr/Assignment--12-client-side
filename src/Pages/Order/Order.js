@@ -30,7 +30,6 @@ const Order = () => {
 
     const orderValue = (e) => {
         const value = e.target.value;
-        console.log(value, minimum)
         setTotalPrice(value * price)
         if (value < minimum) {
             return setOrderError('You have to at least order ' + minimum)
@@ -101,7 +100,6 @@ const Order = () => {
                     })
                         .then(res => res.json())
                         .then(data => {
-                            console.log(data, 'product chang')
                             refetch()
                         })
 

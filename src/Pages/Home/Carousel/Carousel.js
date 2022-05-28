@@ -14,21 +14,21 @@ const Carousel = () => {
                         <div class=" text-white carousel-caption slider-text">
                             <h1 className='display-3 fw-bold sub-color2'>welcome to <span className='text-color'>DAKU</span></h1>
                             <h2 className=''>Your trusted tool manufacturing company</h2>
-                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
+                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5 rounded-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
                     <div className="carousel-item slider-img-2 slider-img-2 ">
                         <div class=" text-white carousel-caption slider-text">
                             <h1 className='display-3 fw-bold sub-color2'>welcome to <span className='text-color'>DAKU</span></h1>
                             <h2 className=''>Your trusted tool manufacturing company</h2>
-                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
+                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5 rounded-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
                     <div className="carousel-item slider-img-3 ">
                         <div class=" text-white carousel-caption slider-text ">
                             <h1 className='display-3 fw-bold sub-color2'>welcome to <span className='text-color'>DAKU</span></h1>
                             <h2 className=''>Your trusted tool manufacturing company</h2>
-                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
+                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5 rounded-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
                 </div>

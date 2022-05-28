@@ -21,9 +21,9 @@ const Signin = () => {
     ] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
-    const [token] = useToken(user || gUser) 
+    const [token] = useToken(user || gUser)
 
-    if(token){
+    if (token) {
         navigate(from, { replace: true });
     }
 
@@ -51,17 +51,17 @@ const Signin = () => {
                             <div className="mb-4">
                                 <input
                                     placeholder='&#xf0e0; Your email'
-                                    type="email" className="form-control rounded-5 border-0 placeholder-icon py-2 px-3" id="exampleInputEmail2" name='email' aria-describedby="emailHelp" required />
+                                    type="email" className="form-control rounded-5 border-0 placeholder-icon py-2 px-3" name='email' required />
                             </div>
                             <div className="mb-4">
                                 <input
                                     placeholder='&#xf023; Password'
-                                    type="password" name='password' className="form-control rounded-5 border-0 placeholder-icon py-2 px-3" id="exampleInputPassword1" required />
+                                    type="password" name='password' className="form-control rounded-5 border-0 placeholder-icon py-2 px-3" required />
                             </div>
                             <p className='mb-2 text-danger'>{error?.message.split(':')[1]}</p>
                             <button type="submit" className="btn bg-color text-white fs-5 p-1 w-100  rounded-5 border-0">
                                 {
-                                    loading? <Loading></Loading> : 'Signup'
+                                    loading ? <Loading></Loading> : 'Signup'
                                 }
                             </button>
                         </form>
