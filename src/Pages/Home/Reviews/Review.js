@@ -4,7 +4,7 @@ const Review = ({data}) => {
     const {name, img, rating, review, country} = data
     return (
         <div className="col">
-            <div className="card h-100 shadow rounded-4 mt-4" >
+            <div className="card h-100 shadow rounded-4 mt-5 mt-md-4" >
                 <img src={img} className="card-img-top review-img" alt="..." />
                 <div className="card-body text-center">
                     <h5 className="card-title mb-0">{name}</h5>
