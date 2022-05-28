@@ -10,18 +10,26 @@ const Carousel = () => {
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <img src="https://i.ibb.co/yp80kJQ/Untitled-design-min.png" className="d-block w-100" alt="..." />
-                        <div class="carousel-caption d-none d-md-block">
-                            <h1>welcome to DAKU</h1>
-                            <p>Some representative placeholder content for the first slide.</p>
+                    <div className="carousel-item active slider-img-1 ">
+                        <div class=" text-white carousel-caption slider-text">
+                            <h1 className='display-3 fw-bold sub-color2'>welcome to <span className='text-color'>DAKU</span></h1>
+                            <h2 className=''>Your trusted tool manufacturing company</h2>
+                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
                         </div>
                     </div>
-                    <div className="carousel-item">
-                        <img src="https://i.ibb.co/gT2tK2X/Untitled-design-2-min.png" className="d-block w-100" alt="..." />
+                    <div className="carousel-item slider-img-2 slider-img-2 ">
+                        <div class=" text-white carousel-caption slider-text">
+                            <h1 className='display-3 fw-bold sub-color2'>welcome to <span className='text-color'>DAKU</span></h1>
+                            <h2 className=''>Your trusted tool manufacturing company</h2>
+                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
+                        </div>
                     </div>
-                    <div className="carousel-item">
-                        <img src="https://i.ibb.co/TtV3HJr/Untitled-design-1-min.png" className="d-block w-100" alt="..." />
+                    <div className="carousel-item slider-img-3 ">
+                        <div class=" text-white carousel-caption slider-text ">
+                            <h1 className='display-3 fw-bold sub-color2'>welcome to <span className='text-color'>DAKU</span></h1>
+                            <h2 className=''>Your trusted tool manufacturing company</h2>
+                            <a target="_blank" className='btn bg-color text-white my-3 px-4 fs-5' href="https://www.ups.com/bd/en/shipping.page">Read more <i className="fa-solid fa-angles-right"></i></a>
+                        </div>
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
