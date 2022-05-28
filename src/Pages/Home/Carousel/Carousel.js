@@ -12,6 +12,10 @@ const Carousel = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src="https://i.ibb.co/yp80kJQ/Untitled-design-min.png" className="d-block w-100" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>welcome to DAKU</h1>
+                            <p>Some representative placeholder content for the first slide.</p>
+                        </div>
                     </div>
                     <div className="carousel-item">
                         <img src="https://i.ibb.co/gT2tK2X/Untitled-design-2-min.png" className="d-block w-100" alt="..." />
