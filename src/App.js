@@ -11,6 +11,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddAReview from './Pages/Dashboard/AddAReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Blog from './Pages/Blog/Blog';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/signin' element={<Signin></Signin>}></Route>
+        <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/order/:productId' element={<RequireAuth>
           <Order></Order>
         </RequireAuth>}></Route>

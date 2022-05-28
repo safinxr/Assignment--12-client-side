@@ -10,7 +10,7 @@ import auth from '../../firebase.init';
 const MyOrders = () => {
     const navigate = useNavigate()
     const [user,] = useAuthState(auth);
-    const { data, isLoading, refetch } = useQuery('MyOrders', () => fetch(`http://localhost:5000/orders/${user?.email}`, {
+    const { data, isLoading, refetch } = useQuery('MyOrders', () => fetch(`https://polar-garden-93471.herokuapp.com/orders/${user?.email}`, {
         method: 'GET',
         headers:{
             'authorization': `Bearer ${localStorage.getItem('token')}`
@@ -39,7 +39,7 @@ const MyOrders = () => {
                 'Your order has been canceled.',
                 'success'
               )
-              fetch(`http://localhost:5000/orders/${id}`, {
+              fetch(`https://polar-garden-93471.herokuapp.com/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

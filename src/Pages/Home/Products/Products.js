@@ -5,7 +5,7 @@ import Product from './Product';
 
 const Products = () => {
     const [count , setCount] = useState(3)
-    const { data, isLoading, refetch } = useQuery('products', () => fetch(`http://localhost:5000/product?count=${count}`).then(res => res.json()))
+    const { data, isLoading, refetch } = useQuery('products', () => fetch(`https://polar-garden-93471.herokuapp.com/product?count=${count}`).then(res => res.json()))
 
     const recount= async ()=>{
         const newCount = count + 3;

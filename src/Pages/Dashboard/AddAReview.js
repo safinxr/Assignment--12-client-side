@@ -16,7 +16,7 @@ const AddAReview = () => {
         const name = user.displayName;
         const newReview = { review, country, rating, email, name, img }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://polar-garden-93471.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

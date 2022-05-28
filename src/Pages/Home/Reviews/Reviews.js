@@ -5,7 +5,7 @@ import Review from './Review';
 
 const Reviews = () => {
     const [count , setCount] = useState(3)
-    const { data, isLoading, refetch } = useQuery('reviews', () => fetch(`http://localhost:5000/review?count=${count}`).then(res => res.json()))
+    const { data, isLoading, refetch } = useQuery('reviews', () => fetch(`https://polar-garden-93471.herokuapp.com/review?count=${count}`).then(res => res.json()))
 
 
     return (

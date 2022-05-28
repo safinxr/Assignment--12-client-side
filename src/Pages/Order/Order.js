@@ -20,7 +20,7 @@ const Order = () => {
     //🧲🧲🧲🧲🧲🧲🧲🧲 product fetch start 🧲🧲🧲🧲🧲🧲🧲🧲
     const { productId } = useParams();
 
-    const { data, isLoading, refetch } = useQuery('product', () => fetch(`http://localhost:5000/product/${productId}`).then(res => res.json()))
+    const { data, isLoading, refetch } = useQuery('product', () => fetch(`https://polar-garden-93471.herokuapp.com/product/${productId}`).then(res => res.json()))
 
     //🧩🧩🧩🧩🧩🧩🧩🧩🧩 ui data pass 🧩🧩🧩🧩🧩🧩🧩🧩🧩 
     if (isLoading) {
@@ -79,7 +79,7 @@ const Order = () => {
                     const postData = { productName, email, quantity, totalPrice, number, address }
 
 
-                    fetch('http://localhost:5000/orders', {
+                    fetch('https://polar-garden-93471.herokuapp.com/orders', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
@@ -91,7 +91,7 @@ const Order = () => {
                             console.log(data, "order post");
                         })
 
-                    fetch(`http://localhost:5000/product/${productId}`, {
+                    fetch(`https://polar-garden-93471.herokuapp.com/product/${productId}`, {
                         method: "PUT",
                         headers: {
                             "content-type": "application/json",

@@ -30,6 +30,16 @@ const Navbar = () => {
                                 Home
                             </NavLink>
                         </li>
+                        <li className='nave-item'>
+                            <NavLink
+                                className={({ isActive }) =>
+                                    isActive ? "nav-link text-info fs-4 ms-2" : "nav-link fs-4 ms-2 text-white"
+                                }
+                                to="/blog"
+                            >
+                                Blog
+                            </NavLink>
+                        </li>
                         {
                             user && <li className='nave-item'>
                                 <NavLink
